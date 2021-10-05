@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nikatdemo/image_picker_screen.dart';
+import 'package:nikatdemo/login_page_screen.dart';
 import 'news_screen.dart';
 class Nav extends StatefulWidget {
   const Nav({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _NavState extends State<Nav> {
   List<Widget> _widgetOption=<Widget>[
     News(),
     ImageScreen(),
-    Text("login"),
+    LoginPage(),
 
   ];
   void _onItemTap(int index){
