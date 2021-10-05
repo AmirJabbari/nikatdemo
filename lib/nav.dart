@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'package:nikatdemo/image_picker_screen.dart';
+import 'news_screen.dart';
 class Nav extends StatefulWidget {
   const Nav({Key? key}) : super(key: key);
 
@@ -10,8 +12,8 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _selectedIndex=0;
   List<Widget> _widgetOption=<Widget>[
-    Text("home"),
-    Text("image"),
+    News(),
+    ImageScreen(),
     Text("login"),
 
   ];
