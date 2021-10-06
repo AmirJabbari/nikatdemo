@@ -1,8 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:nikatdemo/model/article_model.dart';
 
 Widget costumListTitle(Article article){
+  String formattedDate="";
+
+  if(article.publishedAt!="Null"){
+    DateTime dateTime=DateTime.parse(article.publishedAt);
+    if(dateTime!="Null"){
+      var formatter = new DateFormat('yyyy-MM-DD');
+      formattedDate = formatter.format(dateTime);
+      formattedDate = formattedDate.substring(0, formattedDate.length - 1);
+
+    }else{
+      formattedDate = "null";
+
+    }
+  }else{
+    formattedDate = "null";
+
+  }
+
+
   return Container(
     margin: EdgeInsets.all(12),
     padding: EdgeInsets.all(8),
@@ -37,14 +57,17 @@ Widget costumListTitle(Article article){
         Row(
           children: [
             Icon(Icons.person),
-            Text(
+            Container(
+              width: 100,
+              child: Text(
                 article.author,
-              style: TextStyle(fontSize: 10,),
+                style: TextStyle(fontSize: 10,),
+              ),
             ),
-            SizedBox(width: 40,),
+            SizedBox(width: 30,),
             Icon(Icons.date_range),
             Text(
-              article.publishedAt,
+              formattedDate,
               style: TextStyle(fontSize: 10,),
             ),
 

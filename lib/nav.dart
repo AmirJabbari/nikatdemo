@@ -27,7 +27,7 @@ class _NavState extends State<Nav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bottom Nav Bar"),
+        title: Text("Nikat"),
       ),
       body: Center(
         child: _widgetOption.elementAt(_selectedIndex),

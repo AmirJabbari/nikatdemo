@@ -21,13 +21,13 @@ class _ImageScreenState extends State<ImageScreen> {
       child: Column(
         children: [
           TextButton(
-            child: Text("SelectImage"),
+            child: Text("SelectImage",style: TextStyle(fontSize: 20),),
             onPressed: (){
               filePicker();
             },
           ),
           const SizedBox(height: 20),
-          image == null ? Text("data") : Image.file(File(image!.path),
+          image == null ? Text("") : Image.file(File(image!.path),
           width: 250,
           fit: BoxFit.cover,)
         ],
